@@ -1,0 +1,217 @@
+/* Start with assumption that width starts at 1440px */
+* {
+  font-family: "Space Mono", monospace;
+  font-weight: 700 !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.splitter {
+  margin-top: auto;
+  margin-bottom: 3em;
+}
+
+.container main {
+  max-width: 980px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 28px;
+  padding: 1em;
+}
+
+/* Billing section */
+
+.billing-setup {
+  margin: 1em;
+  margin-bottom: 42px;
+}
+
+.billing-label {
+  font-size: 1rem;
+  color: hsl(186, 14%, 43%);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.billing input {
+  border: none;
+  border-radius: 6px;
+}
+
+.billing input:not(.custom-tip) {
+  margin-left: -2px;
+}
+
+.billing input,
+.billing input:focus {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  font-size: 24px;
+  text-align: end;
+}
+
+.reset-outline:focus {
+  box-shadow: 0 0 0 0.08rem hsl(172, 67%, 45%);
+  border-color: hsl(172, 67%, 45%);
+}
+
+.tip-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 30%);
+  margin-right: 101px;
+  gap: 1rem;
+}
+
+.billing button:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  transition: 0.5s ease;
+  box-shadow: none;
+}
+
+.tip-button {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+}
+
+.toggleButton {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  box-shadow: none;
+}
+
+.toggle-custom-tip {
+  box-shadow: 0 0 0 0.08rem hsl(172, 67%, 45%);
+  border-color: hsl(172, 67%, 45%);
+}
+
+.billing .custom-tip {
+  text-align: center;
+}
+
+.custom-tip:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.peopleLabel {
+  position: relative;
+  width: 100%;
+}
+
+.error-border {
+  border-color: orangered !important;
+}
+
+.not-zero::after {
+  content: "Cant' be zero";
+  color: orangered;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1rem;
+}
+
+.inputIcon::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 15px;
+}
+
+.dollar::before {
+  background: url("./images/icon-dollar.svg") center / contain no-repeat;
+}
+
+.person::before {
+  background: url("./images/icon-person.svg") center / contain no-repeat;
+}
+
+/* Display-price section */
+
+.display-price {
+  background-color: hsl(183, 100%, 15%);
+  padding: 2em 2em 36px;
+  border-radius: 21px;
+}
+
+.white-text {
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.gray-cyan {
+  color: hsl(186, 14%, 56%);
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.cyan {
+  color: hsl(172, 67%, 45%);
+  font-size: 2.75rem;
+  margin-top: -0.35em;
+}
+
+.reset-button {
+  color: hsl(183, 100%, 19%);
+  background-color: hsl(183, 100%, 23%);
+  width: 100%;
+  font-size: 24px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-top: 120px;
+  padding: 7px 12px;
+}
+
+.reset-button:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  transition: 0.5s ease;
+}
+
+/* footer */
+.attribution {
+  margin-top: auto;
+  font-size: 11px;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 991px) {
+  .reset-button{
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tip-grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+  .container main {
+    margin: auto 0;
+    padding: 0 0 24px;
+  }
+  .reset-button {
+    margin-top: 0;
+  }
+  .cyan {
+    font-size: 2rem;
+  }
+}
